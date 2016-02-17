@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eberspacher">
+<head>
+    <meta charset="UTF-8">
+    <title>Eberspacher Easy Start Text</title>
+    <style>
+        *, html, body { margin: 0; padding: 0;}
+        .box { box-shadow: 0 0 2px rgba(0,0,0,0.5); padding: 4px; margin: 4px; }
+        .controls { font-size: 0;}
+        .control { display: inline-block; width: 50%; font-size: 18px;}
+        .control div { height: 150px;}
+        .control:nth-child(2n) {text-align: right;}
+        .control:hover { cursor: pointer; }
+        .display {font-size: 18px; height: 200px; width: 200px; border-radius: 50%; background: white; position: absolute; top: 100px; left:50%;  margin-left:-106px; text-align: center;}
+        .display-item{ display: none;}
+        .display-current{ display: block;}
+        .control-active{background: #ccc; box-shadow: none;}
+    </style>
+</head>
+<body>
+    <div class="box header">Eberspacher Easy Start Text</div>
+    <div ng-view>
+
+    </div>
+    <div class="box footer">
+        <a href="#/info">Info</a>
+        <a href="#/settings">Settings</a>
+    </div>
+
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-stopwatch/dist/angular-stopwatch.js"></script>
+    <script type="text/javascript" src="./app/device-mock.js"></script>
+    <script type="text/javascript" src="./app/app.js"></script>
+</body>
+</html>

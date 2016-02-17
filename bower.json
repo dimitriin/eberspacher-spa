@@ -1,0 +1,11 @@
+{
+  "name": "eberspacher-spa",
+  "description": "Eberspacher spa",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-resource": "1.4.x",
+    "angular-route": "1.4.x",
+    "angular-stopwatch": "https://github.com/dimitriin/angular-stopwatch.git#0.0.4"
+  }
+}

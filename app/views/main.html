@@ -1,0 +1,45 @@
+<div class="controls">
+    <div class="control"><div class="box" ng-click="heaterOn()" ng-class="{'control-active': isCurrentControl('on')}">ON</div></div>
+    <div class="control"><div class="box" ng-click="heaterOff()" ng-class="{'control-active': isCurrentControl('off')}">OFF</div></div>
+    <div class="control"><div class="box" ng-click="setCurrentControl('heaterPlayDuration')" ng-class="{'control-active': isCurrentControl('heaterPlayDuration')}">TIME</div></div>
+    <div class="control"><div class="box" ng-click="setCurrentControl('weather')" ng-class="{'control-active': isCurrentControl('weather')}">WEATHER</div></div>
+    <div class="box display">
+        <div class="display-item on" ng-class="{'display-current': isCurrentControl('on')}">
+            <div class="on__indicator">ON</div>
+            <div class="on__time-duration">{{lastHeaterPlayDuration}} min</div>
+            <div class="on__timer">
+                <span stopwatch="heaterStopTimestamp" ></span>
+            </div>
+        </div>
+        <div class="display-item off" ng-class="{'display-current': isCurrentControl('off')}">
+            <div class="off__indicator">OFF</div>
+            <div class="off__last-play">
+                {{realHeaterPlayDuration}} / {{lastHeaterPlayDuration}} min <br>
+                on {{lastHeaterPlayTime}}
+            </div>
+        </div>
+        <div class="display-item time-duration" ng-class="{'display-current': isCurrentControl('heaterPlayDuration')}" >
+            <select class="time-duration__select" ng-model="settingsHeaterPlayDuration" ng-change="setSettingsHeaterPlayDuration(settingsHeaterPlayDuration)">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="60">60</option>
+            </select>
+        </div>
+        <div class="display-item weather" ng-class="{'display-current': isCurrentControl('weather')}">
+            <div class="weather__temp">{{temp}} C</div>
+            <div class="weather__location">
+                {{city}}<br>
+                {{country}}
+            </div>
+        </div>
+    </div>
+</div>
